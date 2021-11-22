@@ -10,7 +10,7 @@ h2 {
 }
 
 h4 {
-  font-size: 0.8em;
+  font-size: 1em;
   padding-top: 5px;
 }
 
@@ -19,18 +19,54 @@ h5 {
 }
 
 .player{
-  margin-top: 20%;
-}
-
-.current-score {
-  background: #eb4d4c;
-  width : 120px;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  position: sticky;
+  top: 20%;
 }
 
 .global-score {
   font-size: 6em;
   color: #eb4d4c;
+  position: sticky;
+  top: 25%;
 }
 
+.current-score {
+  background: #eb4d4c;
+  width : 150px;
+  position: sticky;
+  top: 60%;
+}
+
+
+
+.icons {
+  color: #eb4d4c;
+}
+
+.action {
+  font-size: 1.2em;
+}
+
+
+.new-game {
+  position: sticky;
+  top: 6%;
+}
+
+.dice {
+  width: 96px;
+  height: 96px;
+  position: sticky;
+  top: 30%;
+  box-shadow: 0 0 10px 10px rgba(204, 204, 204, 0.2);
+}
+
+.roll-dice {
+  position: sticky;
+  top: 60%;  
+}
+
+.hold {
+  position: sticky;
+  top: 67%;  
+}
