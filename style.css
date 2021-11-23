@@ -5,56 +5,46 @@ body {
   font-family: 'Lato', sans-serif;
   overflow: hidden;
 }
-
 h2 {
   font-size: 3em;
 }
-
 h4 {
   font-size: 1em;
   padding-top: 5px;
 }
-
 h5 {
   font-size: 2em;
 }
-
 .player{
   position: sticky;
   top: 20%;
 }
-
 .global-score {
   font-size: 6em;
   color: #eb4d4c;
   position: sticky;
   top: 25%;
 }
-
 .current-score {
   background: #eb4d4c;
   width : 150px;
   position: sticky;
   top: 60%;
 }
-
-
-
 .icons {
   color: #eb4d4c;
 }
-
 .action {
   font-size: 1.2em;
+  cursor: pointer;
 }
-
-
+.action:hover {
+  font-weight: bold;
+}
 .new-game {
   position: sticky;
   top: 6%;
-  cursor: pointer;
-}
-
+  }
 .dice {
   width: 96px;
   height: 96px;
@@ -62,17 +52,14 @@ h5 {
   top: 30%;
   box-shadow: 0 0 10px 10px rgba(204, 204, 204, 0.2);
 }
-
 .roll-dice {
   position: sticky;
   top: 60%;  
 }
-
 .hold {
   position: sticky;
   top: 67%;  
 }
-
 .active-player::after {
   content: url(images/dot.svg);
 }
@@ -100,12 +87,26 @@ h5 {
   grid-template-columns: 1.2fr 6fr;
   transition: 1s;
 }
+#toast2{
+  position: absolute;
+  top: 20px;
+  right: -380px;
+  width: 380px;
+  height: 80px;
+  padding: 15px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px 10px rgba(50, 50, 50, 0.10);
+  border-left: 8px solid #eb4d4c;
+  border-radius: 7px;
+  display: grid;
+  grid-template-columns: 1.2fr 6fr;
+  transition: 1s;
+}
 .container-1,.container-2{
   align-self: center;
 }
 .container-1 svg{
   font-size: 40px;
-  color: #299fd6;
 }
 .container-2 p:first-child{
   color: #101020;
@@ -120,4 +121,10 @@ h5 {
 .container-2 p {
   margin: 0;
   padding-left: 10px;
+}
+.info {
+  color: #299fd6;
+}
+.danger {
+  color: #eb4d4c;
 }
