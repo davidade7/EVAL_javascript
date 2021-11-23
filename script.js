@@ -12,6 +12,17 @@ let dice = document.querySelector('.dice object');
 let newGame = document.querySelector("#validateNewGame");
 
 
+// Toast
+let toast = document.getElementById("toast");
+function showToast(){
+  let timer = 0;
+  toast.style.transform = "translateX(-400px)";
+  timer = setTimeout(() => {
+      toast.style.transform = "translateX(400px)"
+  }, 3000);
+}
+
+
 // NEW GAME
 newGame.addEventListener('click', e => {
   // Reinitialize all scores
@@ -24,8 +35,9 @@ newGame.addEventListener('click', e => {
   // remove the class "active-player" from both player
   player2.classList.remove("active-player");
   player1.classList.add("active-player");
-
+  
   // Show message to players
+  showToast()
   console.log('The game has been initialize');
 }); 
 
