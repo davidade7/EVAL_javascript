@@ -11,6 +11,7 @@ let mssgPlayer = document.querySelector('#mssgPlayer');
 // buttons queries
 let newGame = document.querySelector('#validateNewGame');
 let rollDice = document.querySelector('.roll-dice');
+let hold = document.querySelector('.hold');
 
 // Variable
 let activePlayer = 2;
@@ -58,17 +59,35 @@ function changePlayer(){
 }
 
 
+// reset of current score of player 1
+function resetCurrentScore1(){
+  cSP1 = 0; 
+  currentScorePlayer1.innerText = cSP1;
+}
+
+
+// reset of current score of player 2
+function resetCurrentScore2(){
+  cSP2 = 0; 
+  currentScorePlayer2.innerText = cSP2;
+}
+
+
+// reset of all global scores
+function resetGlobalScores(){
+  gSP1 = 0;
+  gSP2 = 0;
+  globalScorePlayer1.innerText = gSP1;
+  globalScorePlayer2.innerText = gSP2;
+}
+
+
 // NEW GAME
 newGame.addEventListener('click', () => {
   // Reinitialize all scores
-  gSP1 = 0;
-  gSP2 = 0;
-  cSP1 = 0;
-  cSP2 = 0;
-  globalScorePlayer1.innerText = gSP1;
-  currentScorePlayer1.innerText = cSP1;
-  globalScorePlayer2.innerText = gSP2;
-  currentScorePlayer2.innerText = cSP2;
+  resetGlobalScores();
+  resetCurrentScore1();
+  resetCurrentScore2();
   // Reinitialize initial dice to dice 1
   dice.setAttribute("data", "images/dice-1.svg");
   // remove the class "active-player" from both player
@@ -99,13 +118,11 @@ rollDice.addEventListener('click', () => {
 
   if (diceThrow === 1){
     if (activePlayer === 1){
-      cSP1 = 0; 
-      currentScorePlayer1.innerText = cSP1;
+      resetCurrentScore1()
       showToastDiceOne();
       changePlayer();
     } else {
-      cSP2 = 0;
-      currentScorePlayer2.innerText = cSP2;
+      resetCurrentScore2()
       showToastDiceOne();
       changePlayer();      
     }      
@@ -120,3 +137,18 @@ rollDice.addEventListener('click', () => {
   }
 });
 
+
+// HOLD
+hold.addEventListener('click', () => {
+  if (activePlayer === 1){
+    gSP1 += cSP1;
+    globalScorePlayer1.innerText = gSP1;
+    resetCurrentScore1();
+    changePlayer();
+  } else {
+    gSP2 += cSP2;
+    globalScorePlayer2.innerText = gSP2;
+    resetCurrentScore2();
+    changePlayer();
+  }
+});
