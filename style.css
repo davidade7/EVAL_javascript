@@ -51,6 +51,7 @@ h5 {
 .new-game {
   position: sticky;
   top: 6%;
+  cursor: pointer;
 }
 
 .dice {
@@ -69,4 +70,12 @@ h5 {
 .hold {
   position: sticky;
   top: 67%;  
+}
+
+.active-player::after {
+  content: url(images/dot.svg);
+}
+
+.modal-body {
+  font-size: 1.5em;
 }
