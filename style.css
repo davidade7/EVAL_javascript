@@ -1,26 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
+:root {
+  font-size : 1.2em;
+}
 
 body {
   font-family: 'Lato', sans-serif;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
-h2 {
+/*h2 {
   font-size: 3em;
-}
-h4 {
+}*/
+/*h4 {
   font-size: 1em;
   padding-top: 5px;
 }
 h5 {
   font-size: 2em;
-}
+}*/
 .player{
   position: sticky;
   top: 20%;
 }
 .global-score {
-  font-size: 6em;
+  /*font-size: 6em;*/
   color: #eb4d4c;
   position: sticky;
   top: 25%;
