@@ -1,4 +1,4 @@
-// DOM queries
+// Main DOM queries
 let globalScorePlayer1 = document.getElementById('global-score-1');
 let globalScorePlayer2 = document.getElementById('global-score-2');
 let currentScorePlayer1 = document.getElementById('current-score-1');
@@ -6,13 +6,6 @@ let currentScorePlayer2 = document.getElementById('current-score-2');
 let player1 = document.getElementById('player-1');
 let player2 = document.getElementById('player-2');
 let dice = document.querySelector('.dice object');
-let mssgPlayer = document.querySelector('#mssgPlayer');
-let modalWinner = document.querySelector('#modalWinner');
-let winner = document.querySelector('#winner');
-
-// buttons queries
-let rollDice = document.querySelector('.roll-dice');
-let hold = document.querySelector('.hold');
 
 // Variable
 let activePlayer = 2;
@@ -22,31 +15,50 @@ let gSP2 = 0;
 let cSP1 = 0;
 let cSP2 = 0;
 
-
+// ---------------------------- TOASTS ----------------------
 // Toast New Game
-let toast = document.getElementById("toast");
+let toastNewGame = document.querySelector('#toast-1');
+let mssgNG1 = document.querySelector('#mssg-ng-1');
 let timer;
-function showToast(){
-  toast.style.transform = "translateX(-400px)";
+function showToastNewGame(){
+  toastNewGame.style.transform = "translateX(-400px)";
+  mssgNG1.innerHTML = `<strong>Player ${activePlayer}</strong> it's your turn!`;
   timer = setTimeout(() => {
-      toast.style.transform = "translateX(400px)"
+    toastNewGame.style.transform = "translateX(400px)"
   }, 3000);
 }
 
 
-// Toast dice 1
-let toast2 = document.getElementById("toast2");
+// Toast if dice 1
+let toastDiceOne = document.querySelector('#toast-2');
+let mssgDice1 = document.querySelector('#mssg-dice-1');
+let mssgDice2 = document.querySelector('#mssg-dice-2');
 let timer2;
 function showToastDiceOne(){
-  toast2.style.transform = "translateX(-400px)";
-  let toasterMessage = `Sorry Player ${activePlayer}`;
-  mssgPlayer.innerText = toasterMessage;
+  toastDiceOne.style.transform = "translateX(-400px)";
+  mssgDice1.innerText = `Sorry Player ${activePlayer}`;
+  mssgDice2.innerHTML = `<strong>Player ${notActivePlayer}</strong> it's your turn!`;
   timer2 = setTimeout(() => {
-      toast2.style.transform = "translateX(400px)"
+    toastDiceOne.style.transform = "translateX(400px)"
   }, 3000);
 }
 
 
+// Toast if hold
+let toastHold = document.querySelector('#toast-3');
+let mssgHold1 = document.querySelector('#mssg-hold-1');
+let mssgHold2 = document.querySelector('#mssg-hold-2');
+let timer3;
+function showToastHold(){
+  toastHold.style.transform = "translateX(-400px)";
+  mssgHold1.innerText = `Player ${activePlayer} decides to hold.`;
+  mssgHold2.innerHTML = `<strong>Player ${notActivePlayer}</strong> it's your turn!`;
+  timer3 = setTimeout(() => {
+    toastHold.style.transform = "translateX(400px)"
+  }, 3000);
+}
+
+// ---------------------------- small functions ----------------------
 // Change Player
 function changePlayer(){
   if(activePlayer === 1){
@@ -86,32 +98,52 @@ function resetGlobalScores(){
 }
 
 
-// Check if there is a winner
-function checkWinner(score,player){
-  if (score >= 20){
-    openModal();
-    winner.innerText = player;
-    console.log(`Player ${player} won the game!`);
-  }
+// Random
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min +1)) + min;
 }
 
 
+// Check if the global score is reached
+let checkScore = (score => {
+  if (score >= 100){
+      return true;
+  } else {
+      return false;
+    }
+});
+
+
 // Open the winner modal
+let modalWinner = document.querySelector('#modalWinner');
+let backdrop = document.getElementById("backdrop")
 function openModal() {
-  document.getElementById("backdrop").style.display = "block"
-  document.getElementById("modalWinner").style.display = "block"
-  document.getElementById("modalWinner").classList.add("show")
+  backdrop.style.display = "block"
+  modalWinner.style.display = "block"
+  modalWinner.classList.add("show")
 }
 
 
 // Close the winner modal
 function closeModal() {
-  document.getElementById("backdrop").style.display = "none"
-  document.getElementById("modalWinner").style.display = "none"
-  document.getElementById("modalWinner").classList.remove("show")
+  backdrop.style.display = "none"
+  modalWinner.style.display = "none"
+  modalWinner.classList.remove("show")
 }
 
 
+// Winner
+let winner = document.querySelector('#winner');
+function Winner(player){
+    openModal();
+    winner.innerText = player;
+    /*console.log(`Player ${player} won the game!`);*/
+}
+
+
+// ---------------------------- main functions ----------------------
 // NEW GAME
 function newGame(){
   // Close the winner modal in case if it's open
@@ -126,27 +158,21 @@ function newGame(){
   player2.classList.remove("active-player");
   player1.classList.add("active-player");
   activePlayer = 1;
+  notActivePlayer = 2;
   // Show message to players
-  showToast()
-  console.log('The game has been initialize');
+  showToastNewGame()
+  /*console.log('The game has been initialize');*/
 } 
 
 
-// Random
-function getRandomIntInclusive(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min +1)) + min;
-}
-
-
 // ROLL DICE
+let rollDice = document.querySelector('.roll-dice');
 rollDice.addEventListener('click', () => {
   let diceThrow = getRandomIntInclusive(1,6);
   let diceFace = "images/dice-"+diceThrow+".svg";
 
   dice.setAttribute("data", diceFace)
-  console.log(`dice ${diceThrow}`);
+  /*console.log(`dice ${diceThrow}`);*/
 
   if (diceThrow === 1){
     if (activePlayer === 1){
@@ -171,18 +197,28 @@ rollDice.addEventListener('click', () => {
 
 
 // HOLD
+let hold = document.querySelector('.hold');
 hold.addEventListener('click', () => {
   if (activePlayer === 1){
     gSP1 += cSP1;
     globalScorePlayer1.innerText = gSP1;
     resetCurrentScore1();
-    checkWinner(gSP1,activePlayer);
-    changePlayer();
+    if (checkScore(gSP1)){
+      Winner(activePlayer);
+    } else {
+      showToastHold();
+      changePlayer();
+    }
+    
   } else {
     gSP2 += cSP2;
     globalScorePlayer2.innerText = gSP2;
     resetCurrentScore2();
-    checkWinner(gSP2,activePlayer);
-    changePlayer();
+    if (checkScore(gSP2)){
+      Winner(activePlayer);
+    } else {
+      showToastHold();
+      changePlayer();
+    }
   }
 });
