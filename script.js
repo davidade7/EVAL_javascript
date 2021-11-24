@@ -8,6 +8,7 @@ let player2 = document.getElementById('player-2');
 let dice = document.querySelector('.dice object');
 let mssgPlayer = document.querySelector('#mssgPlayer');
 let modalWinner = document.querySelector('#modalWinner');
+let winner = document.querySelector('#winner');
 
 // buttons queries
 let rollDice = document.querySelector('.roll-dice');
@@ -89,6 +90,7 @@ function resetGlobalScores(){
 function checkWinner(score,player){
   if (score >= 20){
     openModal();
+    winner.innerText = player;
     console.log(`Player ${player} won the game!`);
   }
 }

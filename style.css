@@ -65,10 +65,21 @@ h5 {
 }
 
 
-/* CSS for modal */
+/* CSS for new game modal */
 .modal-body {
   font-size: 1.5em;
 }
+
+
+/* CSS for winner modal */
+.bi-trophy-fill {
+  color: #FFD700;
+  padding-right: 10px;
+}
+
+
+
+
 
 
 /* CSS for toaster */
