@@ -98,8 +98,8 @@ h5 {
 #toast-1, #toast-2, #toast-3 {
   position: absolute;
   top: 20px;
-  right: -380px;
-  width: 380px;
+  right: -390px;
+  width: 370px;
   height: 100px;
   padding: 15px;
   background-color: #ffffff;
