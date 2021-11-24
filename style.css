@@ -62,8 +62,24 @@ h5 {
 }
 .active-player::after {
   content: url(images/dot.svg);
+  position: absolute;
+  bottom: -10%;
+  animation: signal 2s;
 }
-
+@keyframes signal {
+  0% {
+    transform: scale(0);
+  }
+  33% {
+    transform: scale(2.5);
+  }
+  67% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
 /* CSS for new game modal */
 .modal-body {

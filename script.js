@@ -136,7 +136,7 @@ function closeModal() {
 
 // Winner
 let winner = document.querySelector('#winner');
-function Winner(player){
+function theWinner(player){
     openModal();
     winner.innerText = player;
     /*console.log(`Player ${player} won the game!`);*/
@@ -204,7 +204,7 @@ hold.addEventListener('click', () => {
     globalScorePlayer1.innerText = gSP1;
     resetCurrentScore1();
     if (checkScore(gSP1)){
-      Winner(activePlayer);
+      theWinner(activePlayer);
     } else {
       showToastHold();
       changePlayer();
@@ -215,7 +215,7 @@ hold.addEventListener('click', () => {
     globalScorePlayer2.innerText = gSP2;
     resetCurrentScore2();
     if (checkScore(gSP2)){
-      Winner(activePlayer);
+      theWinner(activePlayer);
     } else {
       showToastHold();
       changePlayer();
