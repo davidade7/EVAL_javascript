@@ -7,14 +7,15 @@ let player1 = document.getElementById('player-1');
 let player2 = document.getElementById('player-2');
 let dice = document.querySelector('.dice object');
 let mssgPlayer = document.querySelector('#mssgPlayer');
+let modalWinner = document.querySelector('#modalWinner');
 
 // buttons queries
-let newGame = document.querySelector('#validateNewGame');
 let rollDice = document.querySelector('.roll-dice');
 let hold = document.querySelector('.hold');
 
 // Variable
 let activePlayer = 2;
+let notActivePlayer = 1;
 let gSP1 = 0;
 let gSP2 = 0;
 let cSP1 = 0;
@@ -48,11 +49,13 @@ function showToastDiceOne(){
 // Change Player
 function changePlayer(){
   if(activePlayer === 1){
-    activePlayer = 2
+    activePlayer = 2;
+    notActivePlayer = 1;
     player1.classList.remove("active-player");
     player2.classList.add("active-player");
   } else {
-    activePlayer = 1
+    activePlayer = 1;
+    notActivePlayer = 2;
     player2.classList.remove("active-player");
     player1.classList.add("active-player");
   }
@@ -82,8 +85,35 @@ function resetGlobalScores(){
 }
 
 
+// Check if there is a winner
+function checkWinner(score,player){
+  if (score >= 20){
+    openModal();
+    console.log(`Player ${player} won the game!`);
+  }
+}
+
+
+// Open the winner modal
+function openModal() {
+  document.getElementById("backdrop").style.display = "block"
+  document.getElementById("modalWinner").style.display = "block"
+  document.getElementById("modalWinner").classList.add("show")
+}
+
+
+// Close the winner modal
+function closeModal() {
+  document.getElementById("backdrop").style.display = "none"
+  document.getElementById("modalWinner").style.display = "none"
+  document.getElementById("modalWinner").classList.remove("show")
+}
+
+
 // NEW GAME
-newGame.addEventListener('click', () => {
+function newGame(){
+  // Close the winner modal in case if it's open
+  closeModal();
   // Reinitialize all scores
   resetGlobalScores();
   resetCurrentScore1();
@@ -97,7 +127,7 @@ newGame.addEventListener('click', () => {
   // Show message to players
   showToast()
   console.log('The game has been initialize');
-}); 
+} 
 
 
 // Random
@@ -144,11 +174,13 @@ hold.addEventListener('click', () => {
     gSP1 += cSP1;
     globalScorePlayer1.innerText = gSP1;
     resetCurrentScore1();
+    checkWinner(gSP1,activePlayer);
     changePlayer();
   } else {
     gSP2 += cSP2;
     globalScorePlayer2.innerText = gSP2;
     resetCurrentScore2();
+    checkWinner(gSP2,activePlayer);
     changePlayer();
   }
 });

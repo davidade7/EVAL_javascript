@@ -126,7 +126,7 @@
       </div>
     </div>
 
-    <!-- Modal -->
+    <!-- Modal for new game -->
     <div class="modal fade" id="newGameModal" tabindex="-1" aria-labelledby="newGameModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -139,11 +139,30 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
-            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="validateNewGame">Yes Sure !</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="validateNewGame" onclick=newGame()>Yes Sure !</button>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Modal for winner -->
+    <div class="modal fade" id="modalWinner" tabindex="-1" aria-labelledby="modalWinnerLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalWinnerLabel">We have a winner!</h5>
+            <button type="button" class="btn-close" aria-label="Close" onclick=closeModal()></button>
+          </div>
+          <div class="modal-body">
+            Congratulation to player xxx!
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick=newGame()>Start a new game?</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-backdrop fade show" id="backdrop" style="display: none;"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
