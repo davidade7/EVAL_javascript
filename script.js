@@ -22,7 +22,7 @@ let mssgNG1 = document.querySelector('#mssg-ng-1');
 let timer;
 function showToastNewGame(){
   toastNewGame.style.transform = "translateX(-400px)";
-  mssgNG1.innerHTML = `<strong>Player ${activePlayer}</strong> it's your turn!`;
+  mssgNG1.innerHTML = `Player ${activePlayer}`;
   timer = setTimeout(() => {
     toastNewGame.style.transform = "translateX(400px)"
   }, 3000);
@@ -37,7 +37,7 @@ let timer2;
 function showToastDiceOne(){
   toastDiceOne.style.transform = "translateX(-400px)";
   mssgDice1.innerText = `Sorry Player ${activePlayer}`;
-  mssgDice2.innerHTML = `<strong>Player ${notActivePlayer}</strong> it's your turn!`;
+  mssgDice2.innerHTML = `Player ${notActivePlayer}`;
   timer2 = setTimeout(() => {
     toastDiceOne.style.transform = "translateX(400px)"
   }, 3000);
@@ -52,7 +52,7 @@ let timer3;
 function showToastHold(){
   toastHold.style.transform = "translateX(-400px)";
   mssgHold1.innerText = `Player ${activePlayer} decides to hold.`;
-  mssgHold2.innerHTML = `<strong>Player ${notActivePlayer}</strong> it's your turn!`;
+  mssgHold2.innerHTML = `Player ${notActivePlayer}`;
   timer3 = setTimeout(() => {
     toastHold.style.transform = "translateX(400px)"
   }, 3000);

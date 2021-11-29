@@ -15,55 +15,51 @@
       <div class="col-6 vh-100 bg-light position-absolute top-0 start-0">
         <!-- name 1 -->
         <div class="player">
-          <h2 class="text-center text-secondary fs-2" id="player-1">PLAYER 1</h2>
+          <div class="text-center text-secondary fs-2" id="player-1">PLAYER 1</div>
         </div>
-
         <!-- global score for player 1 -->
         <div class="global-score display-1">
           <div class="text-center " id="global-score-1">
             66
           </div>
         </div>
-      
         <!-- current score for player 1 -->
         <div class="current-score mx-auto p-1">
           <div class="text-center fs-6">CURRENT</div>
-          <h5 class="text-center text-light fs-4" id="current-score-1">50</h5>
+          <div class="text-center text-light fs-3" id="current-score-1">50</div>
         </div>
       </div>
 
       <!-- PLAYER 2 -->
-      <div class="col-6 vh-100 position-absolute top-0 end-0">
+      <div class="col-6 vh-100 bg-white position-absolute top-0 start-50">
         <!-- name 2 -->
         <div class="player">
-          <h2 class="text-center text-secondary active-player" id="player-2">PLAYER 2</h2>
+          <div class="text-center text-secondary fs-2" id="player-2">PLAYER 2</div>
         </div>
-
         <!-- global score for player 2 -->
-        <div class="global-score">
-          <div class="text-center" id="global-score-2">
-            88
+        <div class="global-score display-1">
+          <div class="text-center " id="global-score-2">
+            66
           </div>
         </div>
-      
         <!-- current score for player 2 -->
         <div class="current-score mx-auto p-1">
-          <h4 class="text-center">CURRENT</h4>
-          <h5 class="text-center text-light" id="current-score-2">44</h5>
+          <div class="text-center fs-6">CURRENT</div>
+          <div class="text-center text-light fs-3" id="current-score-2">50</div>
         </div>
       </div>
     </div>
 
     <!-- CENTRAL COMMANDS -->
     <div class="vh-100 position-absolute top-0 start-50 translate-middle-x">
-      <div class="new-game d-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#newGameModal">      
+      <div class="new-game action d-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#newGameModal">      
         <div class="icons d-flex align-items-center">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
             <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
          </svg>
         </div>
-        <div class="ms-3 action">
+        <div class="ms-1">
           NEW GAME
         </div> 
       </div>
@@ -72,26 +68,26 @@
         <object data="images/dice-2.svg" width="96" height="96"></object>
       </div>
 
-      <div class="roll-dice d-flex align-items-center justify-content-center">
+      <div class="roll-dice action d-flex align-items-center justify-content-center">
         <div class="icons d-flex align-items-center">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
             <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
             <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
           </svg>
         </div>
-        <div class="ms-3 action">
+        <div class="ms-1">
           ROLL DICE
         </div>
       </div>
 
-      <div class="hold d-flex align-items-center justify-content-center">
+      <div class="hold action d-flex align-items-center justify-content-center">
         <div class="icons d-flex align-items-center">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-box-arrow-in-down" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1h-2z"/>
             <path fill-rule="evenodd" d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
           </svg>
         </div>
-        <div class="ms-3 action">  
+        <div class="ms-1">  
           HOLD
         </div>
       </div>
@@ -106,9 +102,9 @@
         </svg>
       </div>
       <div class="container-2">
-        <p>Information</p>
-        <p>The new game is ready.</p>
-        <p id="mssg-ng-1"></p>
+        <p class="toaster-title">Information</p>
+        <p class="toaster-body">The new game is ready.</p>
+        <p class="toaster-body"><span id="mssg-ng-1"></span> it's your turn!</p>
       </div>
     </div>
 
@@ -121,9 +117,9 @@
         </svg>
       </div>
       <div class="container-2">
-        <p id="mssg-dice-1"></p>
-        <p>You made a 1.</p>
-        <p id="mssg-dice-2"></p>
+        <p class="toaster-title" id="mssg-dice-1"></p>
+        <p class="toaster-body">You made a 1.</p>
+        <p class="toaster-body"><span id="mssg-dice-2"></span> it's your turn!</p>
       </div>
     </div>
 
@@ -136,8 +132,8 @@
         </svg>
       </div>
       <div class="container-2">
-        <p id="mssg-hold-1"></p>
-        <p id="mssg-hold-2"></p>
+        <p class="toaster-title" id="mssg-hold-1"></p>
+        <p class="toaster-body"><span id="mssg-hold-2"></span> it's your turn!</p>
       </div>
     </div>
 
@@ -154,8 +150,8 @@
             Are you sure you want to start a new game ?
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
-            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="validateNewGame" onclick=newGame()>Yes Sure !</button>
+            <button type="button" class="btn btn-danger py-0 px-2" data-bs-dismiss="modal">No</button>
+            <button type="button" class="btn btn-primary py-0 px-2" data-bs-dismiss="modal" id="validateNewGame" onclick=newGame()>Yes Sure !</button>
           </div>
         </div>
       </div>
@@ -174,11 +170,11 @@
             <button type="button" class="btn-close" aria-label="Close" onclick=closeModal()></button>
           </div>
           <div class="modal-body">
-            Congratulation to player <strong><span id="winner"></span></strong>.
+            Congratulation to <strong>player <span id="winner"></span></strong>.
             <p>You've reached 100 points.</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-success" onclick=newGame()>Start a new game ?</button>
+            <button type="button" class="btn btn-success py-0 px-2" onclick=newGame()>Start a new game ?</button>
           </div>
         </div>
       </div>

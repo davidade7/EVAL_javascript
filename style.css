@@ -1,49 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
 :root {
-  font-size : 1.2em;
+  font-size : 1.5em;
 }
 
 body {
   font-family: 'Lato', sans-serif;
-  /*overflow: hidden;*/
+  overflow: hidden;
 }
-/*h2 {
-  font-size: 3em;
-}*/
-/*h4 {
-  font-size: 1em;
-  padding-top: 5px;
-}
-h5 {
-  font-size: 2em;
-}*/
+
+
+/* Locations of players elements and colours*/
 .player{
   position: sticky;
   top: 20%;
 }
 .global-score {
-  /*font-size: 6em;*/
-  color: #eb4d4c;
   position: sticky;
-  top: 25%;
+  top: 25%;  
+  color: #eb4d4c;
 }
 .current-score {
-  background: #eb4d4c;
-  width : 150px;
   position: sticky;
-  top: 60%;
+  top: 60%;  
+  background: #eb4d4c;
+  max-width : 150px;
 }
-.icons {
-  color: #eb4d4c;
-}
-.action {
-  font-size: 1.2em;
-  cursor: pointer;
-}
-.action:hover {
-  font-weight: bold;
-}
+
+
+/* Locations of centralv commands and style */
 .new-game {
   position: sticky;
   top: 6%;
@@ -63,6 +48,18 @@ h5 {
   position: sticky;
   top: 67%;  
 }
+.icons {
+  color: #eb4d4c;
+}
+.action {
+  cursor: pointer;
+}
+.action:hover {
+  font-weight: bold;
+}
+
+
+/* style and animation for active player */
 .active-player::after {
   content: url(images/dot.svg);
   position: absolute;
@@ -82,11 +79,6 @@ h5 {
   100% {
     transform: scale(1);
   }
-}
-
-/* CSS for new game modal */
-.modal-body {
-  font-size: 1.5em;
 }
 
 
@@ -130,20 +122,21 @@ h5 {
 .container-1 svg{
   font-size: 40px;
 }
-.container-2 p:first-child{
+.toaster-title {
   color: #101020;
   font-weight: 600;
-  font-size: 1.2em;
+  font-size: 0.9em;
 }
-.container-2 p:last-child{
-  font-size: 1em;
+.toaster-body{
+  font-size: 0.7em;
   color: #656565;
-  font-weight: 400;
+  /*font-weight: 400;*/
+}
+.toaster-body span {
+  font-size: 1.2em;
+  font-weight: 1000;
 }
 .container-2 p {
   margin: 0;
   padding-left: 10px;
-}
-p strong{
-  font-size: 1.2em;
 }
