@@ -21,10 +21,12 @@ let toastNewGame = document.querySelector('#toast-1');
 let mssgNG1 = document.querySelector('#mssg-ng-1');
 let timer;
 function showToastNewGame(){
-  toastNewGame.style.transform = "translateX(-400px)";
+  toastNewGame.classList.remove("hide");
+  toastNewGame.classList.add("fade-in");
   mssgNG1.innerHTML = `Player ${activePlayer}`;
   timer = setTimeout(() => {
-    toastNewGame.style.transform = "translateX(400px)"
+    toastNewGame.classList.remove("fade-in");
+    toastNewGame.classList.add("hide");
   }, 3000);
 }
 
@@ -35,11 +37,13 @@ let mssgDice1 = document.querySelector('#mssg-dice-1');
 let mssgDice2 = document.querySelector('#mssg-dice-2');
 let timer2;
 function showToastDiceOne(){
-  toastDiceOne.style.transform = "translateX(-400px)";
+  toastDiceOne.classList.remove("hide");
+  toastDiceOne.classList.add("fade-in");
   mssgDice1.innerText = `Sorry Player ${activePlayer}`;
   mssgDice2.innerHTML = `Player ${notActivePlayer}`;
   timer2 = setTimeout(() => {
-    toastDiceOne.style.transform = "translateX(400px)"
+    toastDiceOne.classList.remove("fade-in");
+    toastDiceOne.classList.add("hide");
   }, 3000);
 }
 
@@ -50,11 +54,13 @@ let mssgHold1 = document.querySelector('#mssg-hold-1');
 let mssgHold2 = document.querySelector('#mssg-hold-2');
 let timer3;
 function showToastHold(){
-  toastHold.style.transform = "translateX(-400px)";
+  toastHold.classList.remove("hide");
+  toastHold.classList.add("fade-in");
   mssgHold1.innerText = `Player ${activePlayer} decides to hold.`;
   mssgHold2.innerHTML = `Player ${notActivePlayer}`;
   timer3 = setTimeout(() => {
-    toastHold.style.transform = "translateX(400px)"
+    toastHold.classList.remove("fade-in");
+    toastHold.classList.add("hide");
   }, 3000);
 }
 

@@ -83,19 +83,18 @@ body {
 
 
 /* CSS for toaster */
-#toast-1, #toast-2, #toast-3 {
+.toast-1 , .toast-2, .toast-3 {
   position: absolute;
   top: 20px;
-  right: -390px;
-  width: 300px;
-  height: 100px;
-  padding: 15px;
+  right: 20px;
+  width: 350px;
+  padding: 5px 10px;
   background-color: #ffffff;
   box-shadow: 0 0 10px 10px rgba(50, 50, 50, 0.10);
   border-radius: 7px;
   display: grid;
   grid-template-columns: 1.2fr 6fr;
-  transition: 1s;
+  transition: ease;
 }
 .toast-info {
   border-left: 8px solid #299fd6;
@@ -132,4 +131,20 @@ body {
 .container-2 p {
   margin: 0;
   padding-left: 10px;
+}
+.hide {
+  display : none;
+}
+.fade-in {
+  animation : fadeIn 4s;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity : 0;
+  }
+  to {
+    opacity : 1;
+  }
 }
