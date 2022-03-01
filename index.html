@@ -2,8 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Dice Game, the first to reach 100 points wins. Make a 1 will change player...">
+    <meta name="keywords" content="dice, dice game" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index">
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <title>The Dice Game</title>
@@ -20,13 +23,13 @@
         <!-- global score for player 1 -->
         <div class="global-score position-absolute start-50 translate-middle-x display-1">
           <div class="text-center " id="global-score-1">
-            66
+            0
           </div>
         </div>
         <!-- current score for player 1 -->
         <div class="current-score position-absolute start-50 translate-middle-x mx-auto p-1">
           <div class="text-center fs-6">CURRENT</div>
-          <div class="text-center text-light fs-3" id="current-score-1">8</div>
+          <div class="text-center text-light fs-3" id="current-score-1">0</div>
         </div>
       </div>
 
@@ -39,13 +42,13 @@
         <!-- global score for player 2 -->
         <div class="global-score position-absolute start-50 translate-middle-x display-1">
           <div class="text-center " id="global-score-2">
-            47
+            0
           </div>
         </div>
         <!-- current score for player 2 -->
         <div class="current-score position-absolute start-50 translate-middle-x mx-auto p-1">
           <div class="text-center fs-6">CURRENT</div>
-          <div class="text-center text-light fs-3" id="current-score-2">11</div>
+          <div class="text-center text-light fs-3" id="current-score-2">0</div>
         </div>
       </div>
     </div>
@@ -180,17 +183,19 @@
             <h5 class="modal-title fw-bold" id="modalWinnerLabel">We have a winner!</h5>
             <button type="button" class="btn-close" aria-label="Close" onclick=closeModal()></button>
           </div>
-          <div class="modal-body">
+          <div class="modal-body text-center">
             Congratulation to <strong>player <span id="winner"></span></strong>.
             <p>You've reached 100 points.</p>
           </div>
-          <div class="modal-footer">
+          <div class="modal-footer d-flex justify-content-center">
             <button type="button" class="btn btn-success py-0 px-2" onclick=newGame()>Start a new game ?</button>
           </div>
         </div>
       </div>
     </div>
     <div class="modal-backdrop fade show" id="backdrop" style="display: none;"></div>
+
+    <noscript>Your browser doesn't support JavaScript or you have disabled JavaScript. Please activate Javscript to continue on this page.</noscript>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>

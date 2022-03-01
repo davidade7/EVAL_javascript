@@ -25,7 +25,7 @@ body {
 }
 
 
-/* Locations of centralv commands and style */
+/* Locations of centrale commands and style */
 .new-game {
   top: 6.5%;
   }
@@ -136,7 +136,7 @@ body {
   display : none;
 }
 .fade-in {
-  animation : fadeIn 4s;
+  animation : fadeIn 1s;
 }
 
 
@@ -146,5 +146,17 @@ body {
   }
   to {
     opacity : 1;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .dice {
+    top: 37%;
+  }
+  .roll-dice {
+    top: 55%;  
+  }
+  .hold {
+    top: 62%;  
   }
 }
