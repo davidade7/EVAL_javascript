@@ -1,3 +1,7 @@
+Project reference: GDWFSDVSWEBAJAVAEXAIII1A
+Project subject: Dynamiser vos sites web avec Javascript
+
+
 This is a study project. 
 Subject : create a dynamic website with javascript. The aim of this web site is a dice game.
 
