@@ -150,6 +150,9 @@ body {
 }
 
 @media screen and (max-width: 600px) {
+  :root {
+    font-size : 1.3em;
+  }
   .dice {
     top: 37%;
   }
@@ -158,5 +161,11 @@ body {
   }
   .hold {
     top: 62%;  
+  }
+  .active-player {
+    font-weight: bold;
+  }
+  .active-player::after {
+    content: '';
   }
 }
